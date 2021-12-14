@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react';
-import { Button, TextField, Box } from '@material-ui/core';
+import React, { useState, useCallback } from "react";
+import { Button, TextField, Box } from "@material-ui/core";
 
 export function LoginForm({ onSubmit, isLoading }) {
   const [form, setForm] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const handleInputChange = useCallback(
     (event) => {
@@ -55,7 +55,7 @@ export function LoginForm({ onSubmit, isLoading }) {
           disabled={isLoading}
           type="submit"
         >
-          {isLoading ? 'Loading...' : 'Submit'}
+          {isLoading ? "Loading..." : "Submit"}
         </Button>
       </Box>
     </form>

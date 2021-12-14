@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Typography } from '@material-ui/core';
-import { LoginForm } from './LoginForm';
+import React from "react";
+import { Box, Typography } from "@material-ui/core";
+import { LoginForm } from "./LoginForm";
 
 export function Login({ state, onSubmit }) {
   if (state.user) {
@@ -13,8 +13,8 @@ export function Login({ state, onSubmit }) {
     );
   }
 
-  const isLoading = state.status === 'pending';
-  const isError = state.status === 'rejected';
+  const isLoading = state.status === "pending";
+  const isError = state.status === "rejected";
 
   return (
     <>
