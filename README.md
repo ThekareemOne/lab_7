@@ -1,4 +1,4 @@
-# integration-tests
+# Lab 7
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,8 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 yarn start
 ```
-
-To log in, use the email **tobias.funke@reqres.in** and any password.
 
 **Run tests in watch mode:**
 
