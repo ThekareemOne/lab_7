@@ -7,7 +7,7 @@ describe("LoginModule", () => {
     render(<LoginModule />);
 
     // it renders empty email and passsword fields
-    const emailField = screen.getByRole("textbox", { name: "Email" });
+    const emailField = screen.getByLabelText("Email");
     expect(emailField).toHaveValue("");
     const passwordField = screen.getByLabelText("Password");
     expect(passwordField).toHaveValue("");
