@@ -1,30 +1,30 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer, useCallback } from "react";
 
 function loginReducer(state, action) {
   switch (action.type) {
-    case 'error': {
+    case "error": {
       return {
         ...state,
-        status: 'rejected',
+        status: "rejected",
         error: action.error,
       };
     }
-    case 'success': {
+    case "success": {
       return {
         ...state,
-        status: 'resolved',
+        status: "resolved",
         user: action.user,
         error: null,
       };
     }
-    case 'start': {
+    case "start": {
       return {
         ...state,
-        status: 'pending',
+        status: "pending",
         error: null,
       };
     }
-    /* istanbul ignore next */
+
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -33,18 +33,18 @@ function loginReducer(state, action) {
 
 export function useLogin() {
   const [state, dispatch] = useReducer(loginReducer, {
-    status: 'idle',
+    status: "idle",
     user: null,
     error: null,
   });
 
   const onSubmit = useCallback(
     async ({ email, password }) => {
-      dispatch({ type: 'start' });
-      const response = await fetch('https://reqres.in/api/login', {
-        method: 'POST',
+      dispatch({ type: "start" });
+      const response = await fetch("https://reqres.in/api/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email,
@@ -54,12 +54,12 @@ export function useLogin() {
       const { token, error } = await response.json();
       if (token) {
         dispatch({
-          type: 'success',
+          type: "success",
           user: { email },
         });
       } else {
         dispatch({
-          type: 'error',
+          type: "error",
           error,
         });
       }
